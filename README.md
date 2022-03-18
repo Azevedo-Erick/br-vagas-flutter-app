@@ -1,16 +1,9 @@
-# br_vagas_app
+# Sobre o projeto
+## Objetivo
+Melhorar as habilidades de desenvolvimento com flutter.
+## O que foi feito?
+Basicamente é um sistema que consome a API do github para obter informações de um repositório específico, no caso o repositório de vagas [Backend-br](https://github.com/backend-br/vagas) e assim trazer informações das vagas divulgadas
 
-A new Flutter project.
+## O que planejo?
+No futuro ainda tenho planos de fazer o consumo da API buscando informações do [frontendbr](https://github.com/frontendbr/vagas) e do(qa-brasil)[https://github.com/qa-brasil/vagas].
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
