@@ -5,10 +5,9 @@ import 'package:br_vagas_app/models/vaga_model.dart';
 import 'package:http/http.dart' as http;
 
 class MainController {
-  Future<List<Vaga>> getJobs() async {
+  Future<List<Vaga>> getJobs(String url) async {
     List<Vaga> jobsList = [];
-    http.Response response = await http.get(Uri.parse(
-        "https://api.github.com/repos/backend-br/vagas/issues?per_page=100"));
+    http.Response response = await http.get(Uri.parse("$url?per_page=20"));
     var results = jsonDecode(response.body);
     for (int i = 0; i < results.length; i++) {
       List<Label> labels = [];
