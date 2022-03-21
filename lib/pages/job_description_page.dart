@@ -27,9 +27,12 @@ class JobDescriptionPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Text("Estado da vaga: ${vaga.state}"),
-          Text("Vaga criada em: ${vaga.createdAt}"),
-          Text("Última atualização: ${vaga.updatedAt}"),
+          Text(
+              "Estado da vaga: ${vaga.state == 'open' ? 'Aberta' : 'Fechado'}"),
+          Text(
+              "Vaga criada em: ${vaga.createdAt.day}-${vaga.createdAt.month}-${vaga.createdAt.year}"),
+          Text(
+              "Última atualização: ${vaga.updatedAt.day}-${vaga.updatedAt.month}-${vaga.updatedAt.year}"),
           Wrap(
             runSpacing: 5,
             direction: Axis.horizontal,

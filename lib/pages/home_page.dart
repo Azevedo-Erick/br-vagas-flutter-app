@@ -22,7 +22,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<Vaga> jobsList = [];
   String repositorio = "https://api.github.com/repos/backend-br/vagas/issues";
-
   void getJobs() async {
     List<Vaga> auxList = [];
     http.Response response =
@@ -62,53 +61,60 @@ class _HomePageState extends State<HomePage> {
         title: Text("BR VAGAS"),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
-            children: [
-              ElevatedButton(
-                child: Text(
-                  "Back-End",
-                  style: TextStyle(fontSize: 12),
-                ),
-                onPressed: () {
-                  setState(() {
-                    repositorio =
-                        "https://api.github.com/repos/backend-br/vagas/issues";
-                    jobsList = [];
-                    loadJobs();
-                  });
-                },
-              ),
-              ElevatedButton(
-                child: Text(
-                  "Front-End",
-                  style: TextStyle(fontSize: 12),
-                ),
-                onPressed: () {
-                  setState(() {
-                    repositorio =
-                        "https://api.github.com/repos/frontendbr/vagas/issues";
-                    jobsList = [];
-                    loadJobs();
-                  });
-                },
-              ),
-              ElevatedButton(
-                child: Text(
-                  "QA",
-                  style: TextStyle(fontSize: 12),
-                ),
-                onPressed: () => setState(() {
-                  repositorio =
-                      "https://api.github.com/repos/qa-brasil/vagas/issues";
-                  jobsList = [];
-                  loadJobs();
-                }),
-              ),
-            ],
-          ),
           Container(
-              height: MediaQuery.of(context).size.height * 0.8,
+            padding: EdgeInsets.symmetric(vertical: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  child: Text(
+                    "Back-End",
+                    style: TextStyle(fontSize: 12),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      repositorio =
+                          "https://api.github.com/repos/backend-br/vagas/issues";
+                      jobsList = [];
+                      loadJobs();
+                    });
+                  },
+                ),
+                ElevatedButton(
+                  child: Text(
+                    "Front-End",
+                    style: TextStyle(fontSize: 12),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      repositorio =
+                          "https://api.github.com/repos/frontendbr/vagas/issues";
+                      jobsList = [];
+                      loadJobs();
+                    });
+                  },
+                ),
+                ElevatedButton(
+                  child: Text(
+                    "QA",
+                    style: TextStyle(fontSize: 12),
+                  ),
+                  onPressed: () => setState(() {
+                    repositorio =
+                        "https://api.github.com/repos/qa-brasil/vagas/issues";
+                    jobsList = [];
+                    loadJobs();
+                  }),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+              //height: MediaQuery.of(context).size.height * 0.8,
               child: ListView.separated(
                   key: UniqueKey(),
                   scrollDirection: Axis.vertical,
